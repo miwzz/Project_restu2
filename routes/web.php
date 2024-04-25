@@ -38,3 +38,12 @@ Route::get('/me', function () {
 
     return view('about_me',compact('nama','umur','lahir','jenis','tentang'));
 });
+
+Route::get('/about/{nama}/{jenis_kelamin}/{pendidikan}/{pekerjaan}/{alamat}', function (Request $request, $nama, $jenis_kelamin, $pendidikan, $pekerjaan, $alamat) {
+    $nama2 = $nama;
+    $jenis_kelamin2 = $jenis_kelamin;
+    $pendidikan2 = $pendidikan;
+    $pekerjaan2 = $pekerjaan;
+    $alamat2 = $alamat;
+    return view('data_diri2',compact('nama2','jenis_kelamin2','pendidikan2','pekerjaan2','alamat2'));
+});
